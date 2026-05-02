@@ -1,0 +1,56 @@
+HERO_PROFILE_IMAGE
+==================
+Location in template : templates/portfolio/index.html — Hero section, right column
+Element ID           : HERO_PROFILE_IMAGE
+Where to place file  : static/images/hero_profile.jpg
+Alt text             : "Shikhar Kanaujia — Software Engineer and AI Builder"
+Suggested size       : 600×600px square (displayed at 380×380px on desktop)
+Notes                : Professional headshot or portrait. Anything placed here will
+                       automatically appear in the hero section. Until added, a solid-color
+                       block with the placeholder label is shown.
+
+
+PROJECT_IMAGE_SAY_APP
+=====================
+Location in template : templates/portfolio/index.html — Projects section, Say App card
+Where to upload      : Django Admin → Projects → Say App → image field
+Alt text             : "Screenshot of Say App — a full-stack microblogging platform"
+Suggested size       : 800×450px (16:9 ratio)
+Notes                : Upload via the Django admin panel (/admin/portfolio/project/).
+                       A solid-color block is shown until the image is uploaded.
+
+
+PROJECT_IMAGE_INVOICERAI
+========================
+Location in template : templates/portfolio/index.html — Projects section, InvoicerAI card
+Where to upload      : Django Admin → Projects → InvoicerAI → image field
+Alt text             : "Screenshot of InvoicerAI — LangChain-powered receipt extraction tool"
+Suggested size       : 800×450px (16:9 ratio)
+Notes                : Upload via the Django admin panel (/admin/portfolio/project/).
+                       A solid-color block is shown until the image is uploaded.
+
+
+CONTACT_SECTION_IMAGE  (optional decorative)
+=============================================
+Location in template : templates/portfolio/index.html — Contact section, beside form
+Element ID           : CONTACT_SECTION_IMAGE
+Where to place file  : static/images/contact_photo.jpg
+Alt text             : "Shikhar Kanaujia — available for internships and full-time roles"
+Suggested size       : 500×600px portrait
+Notes                : Optional. Could be a casual photo, working photo, or event photo.
+                       Until added, a solid-color block placeholder is shown.
+
+
+HOW TO ADD IMAGES
+=================
+  Static images (hero, contact):
+    1. Place the file in the static/images/ directory with the exact filename shown above.
+    2. Run: python manage.py collectstatic (in production) or just use DEBUG=True (dev).
+    3. The image will appear automatically — no code changes needed.
+
+  Project images (via admin):
+    1. Run the server: python manage.py runserver
+    2. Log in at http://127.0.0.1:8000/admin/
+    3. Navigate to Portfolio > Projects > [project name]
+    4. Use the "image" field to upload the screenshot.
+    5. Save — the image will immediately appear on the portfolio.
