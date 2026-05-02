@@ -8,13 +8,13 @@
 
 /* ---- DESIGN TOKENS ---- */
 :root {
-  --bg:        #FFFDF8;
-  --fg:        #1A1A1A;
-  --red:       #FF3B30;
-  --yellow:    #FFCC00;
-  --blue:      #007AFF;
-  --mid:       #F4EFEB;
-  --border:    #E5DCD0;
+  --bg:        #FAF8F5;
+  --fg:        #2D3142;
+  --red:       #FF7B89;
+  --yellow:    #F8D800;
+  --blue:      #4FAAFF;
+  --mid:       #F0ECE1;
+  --border:    #E1D9CD;
   --mono:      'IBM Plex Mono', monospace;
   --display:   'Bebas Neue', sans-serif;
   --body:      'Syne', sans-serif;
@@ -28,7 +28,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: 
+    linear-gradient(rgba(255, 123, 137, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 123, 137, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+  background-attachment: fixed;
   color: var(--fg);
   font-family: var(--body);
   overflow-x: hidden;
@@ -349,11 +355,32 @@ section {
   display: block;
   margin-bottom: 0.5rem;
 }
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.timeline-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white; /* Fallback for transparent backgrounds */
+  flex-shrink: 0;
+}
 .timeline-company {
   font-family: var(--display);
   font-size: 2.2rem;
   color: var(--fg);
   line-height: 1;
+}
+
+@media (min-width: 800px) {
+  .timeline-header {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+  }
 }
 .timeline-role {
   font-family: var(--mono);

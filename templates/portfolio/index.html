@@ -126,10 +126,10 @@
     {% for exp in experiences %}
     <article class="timeline-item reveal">
       <span class="timeline-dot-year">{{ exp.start_date }} — {{ exp.end_date }}</span>
-      <div class="timeline-header" style="display: flex; align-items: center; justify-content: space-between;">
-        <h3 class="timeline-company" style="margin-bottom: 0;">{{ exp.company }}</h3>
+      <div class="timeline-header">
+        <h3 class="timeline-company">{{ exp.company }}</h3>
         {% if exp.company_logo %}
-          <img src="{{ exp.company_logo.url }}" alt="{{ exp.company }} logo" class="timeline-logo" style="width: 48px; height: 48px; object-fit: contain;">
+          <img src="{{ exp.company_logo.url }}" alt="{{ exp.company }} logo" class="timeline-logo">
         {% endif %}
       </div>
       <span class="timeline-role">{{ exp.role }}</span>
