@@ -53,6 +53,10 @@ class ExperienceAdmin(admin.ModelAdmin):
             'fields': ('bullets',),
             'description': 'Enter one bullet point per line.',
         }),
+        ('Certificate', {
+            'fields': ('certificate_link', 'certificate_file'),
+            'description': 'Provide a link or upload a file for the experience certificate.',
+        }),
     )
 
 

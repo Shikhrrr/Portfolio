@@ -76,6 +76,17 @@ class Experience(models.Model):
     bullets = models.TextField(
         help_text='One bullet point per line. Each line will be displayed as a list item.',
     )
+    certificate_link = models.URLField(
+        blank=True,
+        default='',
+        help_text='Link to the certificate (e.g., credential URL or Drive link)',
+    )
+    certificate_file = models.FileField(
+        upload_to='certificates/',
+        blank=True,
+        null=True,
+        help_text='Or upload a certificate file (PDF/Image)',
+    )
     order = models.IntegerField(
         default=0,
         help_text='Lower numbers appear first (top of timeline).',
@@ -173,6 +184,17 @@ class Achievement(models.Model):
         max_length=10,
         default='🏆',
         help_text='Single emoji character for the achievement icon',
+    )
+    certificate_link = models.URLField(
+        blank=True,
+        default='',
+        help_text='Link to the certificate (e.g., credential URL or Drive link)',
+    )
+    certificate_file = models.FileField(
+        upload_to='certificates/',
+        blank=True,
+        null=True,
+        help_text='Or upload a certificate file (PDF/Image)',
     )
     order = models.IntegerField(
         default=0,

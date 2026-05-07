@@ -11,7 +11,7 @@
   --bg:        #FAF8F5;
   --fg:        #2D3142;
   --red:       #FF7B89;
-  --yellow:    #F8D800;
+  --yellow:    #E0A800;
   --blue:      #4FAAFF;
   --mid:       #F0ECE1;
   --border:    #E1D9CD;
@@ -184,7 +184,7 @@ section {
 .hero-subtitle {
   font-family: var(--mono);
   font-size: clamp(0.9rem, 2vw, 1.1rem);
-  color: #999;
+  color: #555;
   margin-bottom: 2rem;
   letter-spacing: 0.05em;
 }
@@ -290,7 +290,7 @@ section {
 .about-bio {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #ccc;
+  color: #555;
   border-left: 4px solid var(--red);
   padding-left: 1.5rem;
 }
@@ -318,7 +318,7 @@ section {
 .stat-label {
   font-family: var(--mono);
   font-size: 0.75rem;
-  color: #777;
+  color: #444;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   display: block;
@@ -396,7 +396,7 @@ section {
 }
 .timeline-bullets li {
   font-size: 0.95rem;
-  color: #bbb;
+  color: #555;
   padding: 0.3rem 0;
   position: relative;
 }
@@ -447,7 +447,7 @@ section {
 }
 .project-desc {
   font-size: 0.9rem;
-  color: #aaa;
+  color: #555;
   line-height: 1.7;
   margin-bottom: 1rem;
 }
@@ -514,9 +514,9 @@ section {
   transition: background 0.15s, color 0.15s, box-shadow 0.15s;
 }
 .skill-tag:hover {
-  background: var(--blue);
-  border-color: var(--blue);
-  color: var(--fg);
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--bg);
   box-shadow: 2px 2px 0 var(--fg);
 }
 
@@ -551,7 +551,7 @@ section {
 }
 .achievement-desc {
   font-size: 0.875rem;
-  color: #888;
+  color: #555;
   line-height: 1.6;
 }
 
@@ -577,7 +577,7 @@ section {
 .edu-degree {
   font-family: var(--mono);
   font-size: 0.8rem;
-  color: #888;
+  color: #555;
   letter-spacing: 0.05em;
   display: block;
   margin-top: 0.2rem;
@@ -594,7 +594,7 @@ section {
 .edu-year {
   font-family: var(--mono);
   font-size: 0.7rem;
-  color: #555;
+  color: #333;
   display: block;
 }
 
@@ -620,7 +620,7 @@ section {
 .contact-link {
   font-family: var(--mono);
   font-size: 0.85rem;
-  color: #aaa;
+  color: #555;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -652,7 +652,7 @@ section {
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #666;
+  color: #444;
 }
 .form-input,
 .form-textarea {
@@ -719,7 +719,7 @@ footer {
 .footer-copy {
   font-family: var(--mono);
   font-size: 0.7rem;
-  color: #444;
+  color: #222;
   margin-top: 0.25rem;
 }
 .footer-links { display: flex; gap: 1.5rem; align-items: center; }
@@ -728,7 +728,7 @@ footer {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #666;
+  color: #444;
   transition: color 0.15s;
 }
 .footer-link:hover { color: var(--red); }

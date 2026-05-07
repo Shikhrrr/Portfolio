@@ -1,8 +1,9 @@
 {# ============================================================
-   Shikhar Kanaujia Portfolio — Single-Page Jinja2 Template
-   ============================================================ #}
+Shikhar Kanaujia Portfolio — Single-Page Jinja2 Template
+============================================================ #}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,375 +27,355 @@
 
   <link rel="stylesheet" href="{{ static('css/style.css') }}" />
 </head>
+
 <body>
 
-{# ============================================================ NAV #}
-<nav id="main-nav" role="navigation" aria-label="Main navigation">
-  <a href="#hero" class="nav-logo">SK</a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#achievements">Achievements</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+  {# ============================================================ NAV #}
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo">SK</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-{# ============================================================ HERO #}
-<section id="hero" aria-label="Hero">
-  <div class="hero-content">
-    <span class="hero-eyebrow anim-0">— Portfolio 2025</span>
-    <h1 class="hero-name anim-1">
-      Shikhar<br /><span>Kanaujia</span>
-    </h1>
-    <p class="hero-subtitle anim-2">Software Engineer&nbsp;·&nbsp;AI Builder&nbsp;·&nbsp;CS @ IIIT Sonepat</p>
+  {# ============================================================ HERO #}
+  <section id="hero" aria-label="Hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow anim-0">— Hello, I am</span>
+      <h1 class="hero-name anim-1">
+        Shikhar<br /><span>Kanaujia</span>
+      </h1>
+      <p class="hero-subtitle anim-2">Software Engineer&nbsp;·&nbsp;AI Builder&nbsp;·&nbsp;CS @ IIIT Sonepat</p>
 
-    <div class="tagline-wrap anim-3" aria-live="polite">
-      <div class="taglines">
-        <div class="tagline">Building AI that works.</div>
-        <div class="tagline">Full-stack, no excuses.</div>
-        <div class="tagline">RAG. REST. Real code.</div>
+      <div class="tagline-wrap anim-3" aria-live="polite">
+        <div class="taglines">
+          <div class="tagline">Building AI that works.</div>
+          <div class="tagline">Full-stack, no excuses.</div>
+          <div class="tagline">RAG. REST. Real code.</div>
+        </div>
+      </div>
+
+      <div class="hero-ctas anim-4">
+        <a href="{{ url('download_resume') }}" class="btn btn-primary" id="btn-resume">
+          ↓ Download Resume
+        </a>
+        <a href="#contact" class="btn btn-outline" id="btn-hire">
+          Hire Me ↓
+        </a>
       </div>
     </div>
 
-    <div class="hero-ctas anim-4">
-      <a href="{{ url('download_resume') }}" class="btn btn-primary" id="btn-resume">
-        ↓ Download Resume
-      </a>
-      <a href="#contact" class="btn btn-outline" id="btn-hire">
-        Hire Me ↓
-      </a>
+    {# HERO_PROFILE_IMAGE placeholder #}
+    <div class="hero-image-wrap anim-2">
+      {% set hero_img = static('images/hero_profile.jpg') %}
+      <img src="{{ hero_img }}" alt="Shikhar Kanaujia — Software Engineer and AI Builder" id="HERO_PROFILE_IMAGE"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="img-placeholder" style="display:none;">
+        [ HERO_PROFILE_IMAGE ]<br />hero_profile.jpg<br />600×600px
+      </div>
     </div>
-  </div>
+  </section>
 
-  {# HERO_PROFILE_IMAGE placeholder #}
-  <div class="hero-image-wrap anim-2">
-    {% set hero_img = static('images/hero_profile.jpg') %}
-    <img
-      src="{{ hero_img }}"
-      alt="Shikhar Kanaujia — Software Engineer and AI Builder"
-      id="HERO_PROFILE_IMAGE"
-      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-    />
-    <div class="img-placeholder" style="display:none;">
-      [ HERO_PROFILE_IMAGE ]<br/>hero_profile.jpg<br/>600×600px
+  {# ============================================================ ABOUT #}
+  <section id="about" aria-label="About">
+    <div class="reveal">
+      <span class="section-label">01 / About</span>
+      <h2 class="section-title">Who I Am.</h2>
     </div>
-  </div>
-</section>
+    <div class="about-bio reveal">
+      <p>{{ config.about_bio }}</p>
+    </div>
+    <div class="about-stats reveal">
+      <div class="stat-block">
+        <span class="stat-number">1,000+</span>
+        <span class="stat-label">Users Impacted</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-number">650+</span>
+        <span class="stat-label">DSA Problems (Leetcode Max Rating 1819)</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-number">8.2</span>
+        <span class="stat-label">GPA / 10</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-number">Top 10</span>
+        <span class="stat-label">Nationally</span>
+      </div>
+    </div>
+  </section>
 
-{# ============================================================ ABOUT #}
-<section id="about" aria-label="About">
-  <div class="reveal">
-    <span class="section-label">01 / About</span>
-    <h2 class="section-title">Who I Am.</h2>
-  </div>
-  <div class="about-bio reveal">
-    <p>{{ config.about_bio }}</p>
-  </div>
-  <div class="about-stats reveal">
-    <div class="stat-block">
-      <span class="stat-number">1,000+</span>
-      <span class="stat-label">Users Impacted</span>
+  {# ============================================================ EXPERIENCE #}
+  <section id="experience" aria-label="Experience">
+    <div class="reveal">
+      <span class="section-label">02 / Experience</span>
+      <h2 class="section-title">Where I've<br />Worked.</h2>
     </div>
-    <div class="stat-block">
-      <span class="stat-number">650+</span>
-      <span class="stat-label">DSA Problems</span>
-    </div>
-    <div class="stat-block">
-      <span class="stat-number">8.2</span>
-      <span class="stat-label">GPA / 10</span>
-    </div>
-    <div class="stat-block">
-      <span class="stat-number">Top 10</span>
-      <span class="stat-label">Nationally</span>
-    </div>
-  </div>
-</section>
-
-{# ============================================================ EXPERIENCE #}
-<section id="experience" aria-label="Experience">
-  <div class="reveal">
-    <span class="section-label">02 / Experience</span>
-    <h2 class="section-title">Where I've<br />Worked.</h2>
-  </div>
-  <div class="timeline">
-    {% for exp in experiences %}
-    <article class="timeline-item reveal">
-      <span class="timeline-dot-year">{{ exp.start_date }} — {{ exp.end_date }}</span>
-      <div class="timeline-header">
-        <h3 class="timeline-company">{{ exp.company }}</h3>
-        {% if exp.company_logo %}
-          <img src="{{ exp.company_logo.url }}" alt="{{ exp.company }} logo" class="timeline-logo">
+    <div class="timeline">
+      {% for exp in experiences %}
+      <article class="timeline-item reveal" style="position: relative;">
+        {% if exp.certificate_link %}
+        <a href="{{ exp.certificate_link }}" target="_blank" rel="noopener" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 10;"></a>
+        {% elif exp.certificate_file %}
+        <a href="{{ exp.certificate_file.url }}" target="_blank" rel="noopener" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 10;"></a>
         {% endif %}
-      </div>
-      <span class="timeline-role">{{ exp.role }}</span>
-      <ul class="timeline-bullets">
-        {% for bullet in exp.get_bullets_list() %}
-        <li>{{ bullet }}</li>
-        {% endfor %}
-      </ul>
-    </article>
-    {% endfor %}
-  </div>
-</section>
+        {% if exp.certificate_link or exp.certificate_file %}
+        <div style="position: absolute; top: 0; right: 0; z-index: 5;">
+          <span style="font-family: var(--mono); color: var(--yellow); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;">DOWNLOAD CERTIFICATE</span>
+        </div>
+        {% endif %}
+        <span class="timeline-dot-year">{{ exp.start_date }} — {{ exp.end_date }}</span>
+        <div class="timeline-header">
+          <h3 class="timeline-company">{{ exp.company }}</h3>
+          {% if exp.company_logo %}
+          <img src="{{ exp.company_logo.url }}" alt="{{ exp.company }} logo" class="timeline-logo">
+          {% endif %}
+        </div>
+        <span class="timeline-role">{{ exp.role }}</span>
+        <ul class="timeline-bullets">
+          {% for bullet in exp.get_bullets_list() %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
 
-{# ============================================================ PROJECTS #}
-<section id="projects" aria-label="Projects">
-  <div class="reveal">
-    <span class="section-label">03 / Projects</span>
-    <h2 class="section-title">Things I've<br />Built.</h2>
-  </div>
-  <div class="projects-grid">
-    {% for project in projects %}
-    <article class="project-card reveal">
+  {# ============================================================ PROJECTS #}
+  <section id="projects" aria-label="Projects">
+    <div class="reveal">
+      <span class="section-label">03 / Projects</span>
+      <h2 class="section-title">Things I've<br />Built.</h2>
+    </div>
+    <div class="projects-grid">
+      {% for project in projects %}
+      <article class="project-card reveal">
 
-      {# Project image with fallback placeholder #}
-      <div class="project-image">
-        {% if project.image %}
-          <img
-            src="{{ project.image.url }}"
-            alt="{{ 'Screenshot of ' + project.name }}"
-            loading="lazy"
-          />
-        {% else %}
+        {# Project image with fallback placeholder #}
+        <div class="project-image">
+          {% if project.image %}
+          <img src="{{ project.image.url }}" alt="{{ 'Screenshot of ' + project.name }}" loading="lazy" />
+          {% else %}
           <div class="img-placeholder">
             {% if project.name == 'Say App' %}
-              [ PROJECT_IMAGE_SAY_APP ]
+            [ PROJECT_IMAGE_SAY_APP ]
             {% elif project.name == 'InvoicerAI' %}
-              [ PROJECT_IMAGE_INVOICERAI ]
+            [ PROJECT_IMAGE_INVOICERAI ]
             {% else %}
-              [ PROJECT_IMAGE ]
+            [ PROJECT_IMAGE ]
             {% endif %}
-            <br/>{{ project.name }}<br/>800×450px
+            <br />{{ project.name }}<br />800×450px
           </div>
-        {% endif %}
-      </div>
+          {% endif %}
+        </div>
 
-      <div class="project-body">
-        {% if project.date_label %}
+        <div class="project-body">
+          {% if project.date_label %}
           <span class="project-date">{{ project.date_label }}</span>
-        {% endif %}
-        <h3 class="project-name">{{ project.name }}</h3>
-        <p class="project-desc">{{ project.description }}</p>
-        <div class="tech-tags">
-          {% for tech in project.get_tech_list() %}
+          {% endif %}
+          <h3 class="project-name">{{ project.name }}</h3>
+          <p class="project-desc">{{ project.description }}</p>
+          <div class="tech-tags">
+            {% for tech in project.get_tech_list() %}
             <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
+          </div>
+          <div class="project-links">
+            {% if project.github_url and project.github_url != '#' %}
+            <a href="{{ project.github_url }}" class="project-link" target="_blank" rel="noopener">GitHub ↗</a>
+            {% else %}
+            <span class="project-link" style="opacity:0.4;cursor:default;">GitHub</span>
+            {% endif %}
+            {% if project.demo_url and project.demo_url != '#' %}
+            <a href="{{ project.demo_url }}" class="project-link" target="_blank" rel="noopener">Live Demo ↗</a>
+            {% else %}
+            <span class="project-link" style="opacity:0.4;cursor:default;">Live Demo</span>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# ============================================================ SKILLS #}
+  <section id="skills" aria-label="Skills">
+    <div class="reveal">
+      <span class="section-label">04 / Skills</span>
+      <h2 class="section-title">What I<br />Work With.</h2>
+    </div>
+    <div class="skills-grid">
+      {% for category, skill_list in skills_by_category.items() %}
+      <div class="skill-cluster reveal">
+        <span class="skill-cluster-title">{{ category }}</span>
+        <div class="skill-tags">
+          {% for skill in skill_list %}
+          <span class="skill-tag">{{ skill.name }}</span>
           {% endfor %}
         </div>
-        <div class="project-links">
-          {% if project.github_url and project.github_url != '#' %}
-            <a href="{{ project.github_url }}" class="project-link" target="_blank" rel="noopener">GitHub ↗</a>
-          {% else %}
-            <span class="project-link" style="opacity:0.4;cursor:default;">GitHub</span>
-          {% endif %}
-          {% if project.demo_url and project.demo_url != '#' %}
-            <a href="{{ project.demo_url }}" class="project-link" target="_blank" rel="noopener">Live Demo ↗</a>
-          {% else %}
-            <span class="project-link" style="opacity:0.4;cursor:default;">Live Demo</span>
-          {% endif %}
-        </div>
       </div>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-
-{# ============================================================ SKILLS #}
-<section id="skills" aria-label="Skills">
-  <div class="reveal">
-    <span class="section-label">04 / Skills</span>
-    <h2 class="section-title">What I<br />Work With.</h2>
-  </div>
-  <div class="skills-grid">
-    {% for category, skill_list in skills_by_category.items() %}
-    <div class="skill-cluster reveal">
-      <span class="skill-cluster-title">{{ category }}</span>
-      <div class="skill-tags">
-        {% for skill in skill_list %}
-          <span class="skill-tag">{{ skill.name }}</span>
-        {% endfor %}
-      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
-</section>
+  </section>
 
-{# ============================================================ ACHIEVEMENTS #}
-<section id="achievements" aria-label="Achievements">
-  <div class="reveal">
-    <span class="section-label">05 / Achievements</span>
-    <h2 class="section-title">Wins &amp;<br />Recognition.</h2>
-  </div>
-  <div class="achievements-list">
-    {% for ach in achievements %}
-    <div class="achievement-item reveal">
-      <div class="achievement-emoji" aria-hidden="true">{{ ach.icon_emoji }}</div>
-      <div>
-        <span class="achievement-title">{{ ach.title }}</span>
-        {% if ach.description %}
-          <p class="achievement-desc">{{ ach.description }}</p>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-
-{# ============================================================ EDUCATION #}
-<section id="education" aria-label="Education">
-  <div class="reveal">
-    <span class="section-label">06 / Education</span>
-    <h2 class="section-title">Where I<br />Learned.</h2>
-  </div>
-  <div class="edu-list">
-    {% for edu in education %}
-    <div class="edu-item reveal">
-      <div>
-        <span class="edu-institution">{{ edu.institution }}</span>
-        <span class="edu-degree">{{ edu.degree }}</span>
-      </div>
-      <div class="edu-details">
-        <span class="edu-score">{{ edu.details }}</span>
-        <span class="edu-year">{{ edu.year }}</span>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-
-{# ============================================================ CONTACT #}
-<section id="contact" aria-label="Contact">
-  <div>
+  {# ============================================================ ACHIEVEMENTS #}
+  <section id="achievements" aria-label="Achievements">
     <div class="reveal">
-      <span class="section-label">07 / Contact</span>
-      <h2 class="section-title">Let's Work<br />Together.</h2>
+      <span class="section-label">05 / Achievements</span>
+      <h2 class="section-title">Wins &amp;<br />Recognition.</h2>
     </div>
+    <div class="achievements-list">
+      {% for ach in achievements %}
+      <div class="achievement-item reveal" style="position: relative;">
+        {% if ach.certificate_link %}
+        <a href="{{ ach.certificate_link }}" target="_blank" rel="noopener" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 10;"></a>
+        {% elif ach.certificate_file %}
+        <a href="{{ ach.certificate_file.url }}" target="_blank" rel="noopener" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 10;"></a>
+        {% endif %}
+        {% if ach.certificate_link or ach.certificate_file %}
+        <div style="position: absolute; top: 1.25rem; right: 1.25rem; z-index: 5;">
+          <span style="font-family: var(--mono); color: var(--yellow); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;">DOWNLOAD CERTIFICATE</span>
+        </div>
+        {% endif %}
+        <div class="achievement-emoji" aria-hidden="true">{{ ach.icon_emoji }}</div>
+        <div style="flex: 1;">
+          <span class="achievement-title">{{ ach.title }}</span>
+          {% if ach.description %}
+          <p class="achievement-desc">{{ ach.description }}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
 
-    <div class="contact-info reveal">
-      <a href="mailto:shikharkan.work@gmail.com" class="contact-email">
-        shikharkan.work@gmail.com
-      </a>
-      <div class="contact-links">
-        <a href="{{ config.linkedin_url }}" class="contact-link" target="_blank" rel="noopener">
-          <span>↗</span>
-          <div>
-            <span>LinkedIn</span>
-            <span class="contact-link-label">Professional Network</span>
-          </div>
-        </a>
-        <a href="{{ config.github_url }}" class="contact-link" target="_blank" rel="noopener">
-          <span>↗</span>
-          <div>
-            <span>GitHub</span>
-            <span class="contact-link-label">Open Source Work</span>
-          </div>
-        </a>
+  {# ============================================================ EDUCATION #}
+  <section id="education" aria-label="Education">
+    <div class="reveal">
+      <span class="section-label">06 / Education</span>
+      <h2 class="section-title">Where I<br />Learned.</h2>
+    </div>
+    <div class="edu-list">
+      {% for edu in education %}
+      <div class="edu-item reveal">
+        <div>
+          <span class="edu-institution">{{ edu.institution }}</span>
+          <span class="edu-degree">{{ edu.degree }}</span>
+        </div>
+        <div class="edu-details">
+          <span class="edu-score">{{ edu.details }}</span>
+          <span class="edu-year">{{ edu.year }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# ============================================================ CONTACT #}
+  <section id="contact" aria-label="Contact">
+    <div>
+      <div class="reveal">
+        <span class="section-label">07 / Contact</span>
+        <h2 class="section-title">Let's Work<br />Together.</h2>
       </div>
 
-      {# CONTACT_SECTION_IMAGE placeholder #}
-      <div class="contact-image-wrap">
-        <img
-          src="{{ static('images/contact_photo.jpg') }}"
-          alt="Shikhar Kanaujia — available for internships and full-time roles"
-          id="CONTACT_SECTION_IMAGE"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-        />
-        <div class="img-placeholder" style="display:none;">
-          [ CONTACT_SECTION_IMAGE ]<br/>contact_photo.jpg<br/>500×600px
+      <div class="contact-info reveal">
+        <a href="mailto:shikharkan.work@gmail.com" class="contact-email">
+          shikharkan.work@gmail.com
+        </a>
+        <div class="contact-links">
+          <a href="{{ config.linkedin_url }}" class="contact-link" target="_blank" rel="noopener">
+            <span>↗</span>
+            <div>
+              <span>LinkedIn</span>
+              <span class="contact-link-label">Professional Network</span>
+            </div>
+          </a>
+          <a href="{{ config.github_url }}" class="contact-link" target="_blank" rel="noopener">
+            <span>↗</span>
+            <div>
+              <span>GitHub</span>
+              <span class="contact-link-label">Open Source Work</span>
+            </div>
+          </a>
+        </div>
+
+        {# CONTACT_SECTION_IMAGE placeholder #}
+        <div class="contact-image-wrap">
+          <img src="{{ static('images/contact_photo.jpg') }}"
+            alt="Shikhar Kanaujia — available for internships and full-time roles" id="CONTACT_SECTION_IMAGE"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="img-placeholder" style="display:none;">
+            [ CONTACT_SECTION_IMAGE ]<br />contact_photo.jpg<br />500×600px
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  {# Contact Form #}
-  <div class="reveal">
-    {% if hire_success %}
-    <div class="success-msg" role="alert">
-      ✓ Message received — I'll get back to you soon.
+    {# Contact Form #}
+    <div class="reveal">
+      {% if hire_success %}
+      <div class="success-msg" role="alert">
+        ✓ Message received — I'll get back to you soon.
+      </div>
+      {% endif %}
+
+      <form class="contact-form" id="hire-form" method="post" action="{{ url('hire') }}" novalidate>
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}" />
+
+        <div class="form-field">
+          <label class="form-label" for="hire-name">Name *</label>
+          <input class="form-input" type="text" id="hire-name" name="name" required placeholder="Your full name"
+            autocomplete="name" />
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="hire-email">Email *</label>
+          <input class="form-input" type="email" id="hire-email" name="email" required placeholder="your@email.com"
+            autocomplete="email" />
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="hire-company">Company (optional)</label>
+          <input class="form-input" type="text" id="hire-company" name="company" placeholder="Where do you work?"
+            autocomplete="organization" />
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="hire-message">Message *</label>
+          <textarea class="form-textarea" id="hire-message" name="message" required
+            placeholder="Tell me about the opportunity or project..."></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="btn-send">
+          Send Message →
+        </button>
+      </form>
     </div>
-    {% endif %}
+  </section>
 
-    <form
-      class="contact-form"
-      id="hire-form"
-      method="post"
-      action="{{ url('hire') }}"
-      novalidate
-    >
-      <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}" />
-
-      <div class="form-field">
-        <label class="form-label" for="hire-name">Name *</label>
-        <input
-          class="form-input"
-          type="text"
-          id="hire-name"
-          name="name"
-          required
-          placeholder="Your full name"
-          autocomplete="name"
-        />
+  {# ============================================================ FOOTER #}
+  <footer role="contentinfo">
+    <div>
+      <div class="footer-name">Shikhar Kanaujia</div>
+      <div class="footer-copy">
+        © 2025 · Built with Django · Designed with intent
       </div>
-      <div class="form-field">
-        <label class="form-label" for="hire-email">Email *</label>
-        <input
-          class="form-input"
-          type="email"
-          id="hire-email"
-          name="email"
-          required
-          placeholder="your@email.com"
-          autocomplete="email"
-        />
-      </div>
-      <div class="form-field">
-        <label class="form-label" for="hire-company">Company (optional)</label>
-        <input
-          class="form-input"
-          type="text"
-          id="hire-company"
-          name="company"
-          placeholder="Where do you work?"
-          autocomplete="organization"
-        />
-      </div>
-      <div class="form-field">
-        <label class="form-label" for="hire-message">Message *</label>
-        <textarea
-          class="form-textarea"
-          id="hire-message"
-          name="message"
-          required
-          placeholder="Tell me about the opportunity or project..."
-        ></textarea>
-      </div>
-      <button type="submit" class="form-submit" id="btn-send">
-        Send Message →
-      </button>
-    </form>
-  </div>
-</section>
-
-{# ============================================================ FOOTER #}
-<footer role="contentinfo">
-  <div>
-    <div class="footer-name">Shikhar Kanaujia</div>
-    <div class="footer-copy">
-      © 2025 · Built with Django · Designed with intent
     </div>
-  </div>
-  <div class="footer-links">
-    <a href="{{ config.linkedin_url }}" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="{{ config.github_url }}" class="footer-link" target="_blank" rel="noopener">GitHub</a>
-    <a href="mailto:shikharkan.work@gmail.com" class="footer-link">Email</a>
-  </div>
-</footer>
+    <div class="footer-links">
+      <a href="{{ config.linkedin_url }}" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="{{ config.github_url }}" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:shikharkan.work@gmail.com" class="footer-link">Email</a>
+    </div>
+  </footer>
 
-<script src="{{ static('js/main.js') }}"></script>
+  <script src="{{ static('js/main.js') }}"></script>
 </body>
+
 </html>
