@@ -7,12 +7,18 @@ HireRequest is read-only (no editing contact form submissions).
 from django.contrib import admin
 from django.utils.html import format_html
 from .models import (
-    SiteConfig, Experience, Project, Skill, Achievement, HireRequest
+    SiteConfig, Experience, Project, Skill, Achievement, HireRequest, SocialLink
 )
 
 
+class SocialLinkInline(admin.TabularInline):
+    model = SocialLink
+    extra = 1
+    fields = ('title', 'url', 'icon_image', 'order')
+
 @admin.register(SiteConfig)
 class SiteConfigAdmin(admin.ModelAdmin):
+    inlines = [SocialLinkInline]
     """Singleton site configuration — always edit record #1."""
     fieldsets = (
         ('Resume', {

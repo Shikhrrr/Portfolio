@@ -91,5 +91,12 @@
       successMsg.style.opacity = '0';
       setTimeout(() => successMsg.remove(), 500);
     }, 5000);
+
+    // Remove the query param from the URL so it doesn't show on refresh
+    const url = new URL(window.location);
+    if (url.searchParams.has('hire_success')) {
+      url.searchParams.delete('hire_success');
+      window.history.replaceState({}, '', url);
+    }
   }
 })();

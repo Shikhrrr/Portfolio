@@ -294,31 +294,21 @@ Shikhar Kanaujia Portfolio — Single-Page Jinja2 Template
           shikharkan.work@gmail.com
         </a>
         <div class="contact-links">
-          <a href="{{ config.linkedin_url }}" class="contact-link" target="_blank" rel="noopener">
-            <span>↗</span>
+          {% for link in config.social_links.all() %}
+          <a href="{{ link.url }}" class="contact-link" target="_blank" rel="noopener">
+            {% if link.icon_image %}
+              <img src="{{ link.icon_image.url }}" alt="{{ link.title }} icon" style="width: 20px; height: 20px; object-fit: contain;">
+            {% else %}
+              <span>↗</span>
+            {% endif %}
             <div>
-              <span>LinkedIn</span>
-              <span class="contact-link-label">Professional Network</span>
+              <span>{{ link.title }}</span>
             </div>
           </a>
-          <a href="{{ config.github_url }}" class="contact-link" target="_blank" rel="noopener">
-            <span>↗</span>
-            <div>
-              <span>GitHub</span>
-              <span class="contact-link-label">Open Source Work</span>
-            </div>
-          </a>
+          {% endfor %}
         </div>
 
-        {# CONTACT_SECTION_IMAGE placeholder #}
-        <div class="contact-image-wrap">
-          <img src="{{ static('images/contact_photo.jpg') }}"
-            alt="Shikhar Kanaujia — available for internships and full-time roles" id="CONTACT_SECTION_IMAGE"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="img-placeholder" style="display:none;">
-            [ CONTACT_SECTION_IMAGE ]<br />contact_photo.jpg<br />500×600px
-          </div>
-        </div>
+
       </div>
     </div>
 
@@ -369,8 +359,9 @@ Shikhar Kanaujia Portfolio — Single-Page Jinja2 Template
       </div>
     </div>
     <div class="footer-links">
-      <a href="{{ config.linkedin_url }}" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="{{ config.github_url }}" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+      {% for link in config.social_links.all() %}
+      <a href="{{ link.url }}" class="footer-link" target="_blank" rel="noopener">{{ link.title }}</a>
+      {% endfor %}
       <a href="mailto:shikharkan.work@gmail.com" class="footer-link">Email</a>
     </div>
   </footer>

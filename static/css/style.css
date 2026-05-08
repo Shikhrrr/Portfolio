@@ -11,7 +11,7 @@
   --bg:        #FAF8F5;
   --fg:        #2D3142;
   --red:       #FF7B89;
-  --yellow:    #E0A800;
+  --yellow:    #FFC107;
   --blue:      #4FAAFF;
   --mid:       #F0ECE1;
   --border:    #E1D9CD;
@@ -567,7 +567,7 @@ section {
   border: 2px solid var(--border);
   transition: border-color 0.2s;
 }
-.edu-item:hover { border-color: var(--blue); }
+.edu-item:hover { border-color: var(--yellow); }
 .edu-institution {
   font-family: var(--display);
   font-size: 1.8rem;

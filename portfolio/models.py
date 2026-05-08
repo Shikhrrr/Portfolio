@@ -55,6 +55,30 @@ class SiteConfig(models.Model):
         return obj
 
 
+class SocialLink(models.Model):
+    """Custom social links attached to SiteConfig."""
+    site_config = models.ForeignKey(
+        SiteConfig,
+        on_delete=models.CASCADE,
+        related_name='social_links',
+    )
+    title = models.CharField(max_length=50, help_text='e.g., Twitter, Instagram')
+    url = models.URLField(help_text='Full URL to the social profile')
+    icon_image = models.ImageField(
+        upload_to='social_icons/',
+        help_text='Upload icon image here',
+    )
+    order = models.IntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+        verbose_name = 'Social Link'
+        verbose_name_plural = 'Social Links'
+
+    def __str__(self):
+        return self.title
+
+
 class Experience(models.Model):
     """Work experience / internship entries."""
     company = models.CharField(max_length=200)
